@@ -1,6 +1,7 @@
 "use client";
 import SplashCursor from "@/components/SplashCursor";
 import { NavBar } from "@/components/ui/tubelight-navbar";
+import { Footer } from "@/components/ui/footer-section";
 import { Briefcase, FileText, Home as HomeIcon, User } from "lucide-react";
 
 const navItems = [
@@ -14,11 +15,12 @@ export default function Page() {
   return (
     <div
       style={{
+        minHeight: "100vh",
         width: "100vw",
-        height: "100vh",
         position: "relative",
         background: "#0d0d0d",
-        overflow: "hidden",
+        overflowX: "hidden",
+        overflowY: "auto",
       }}
     >
       {/* Rough texture overlay */}
@@ -38,6 +40,14 @@ export default function Page() {
       {/* Navbar */}
       <div style={{ position: "relative", zIndex: 3, padding: "32px 24px" }}>
         <NavBar items={navItems} />
+      </div>
+
+      {/* Main spacer to enable scroll */}
+      <div style={{ height: "220vh", position: "relative", zIndex: 3 }} />
+
+      {/* Footer */}
+      <div style={{ position: "relative", zIndex: 3, padding: "0 16px 48px" }}>
+        <Footer />
       </div>
 
       <div style={{ position: "absolute", inset: 0, zIndex: 2 }}>
