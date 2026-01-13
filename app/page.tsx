@@ -1,7 +1,9 @@
 "use client";
+import { useCallback, useState } from "react";
 import SplashCursor from "@/components/SplashCursor";
 import { NavBar } from "@/components/ui/tubelight-navbar";
 import { Footer } from "@/components/ui/footer-section";
+import Preloader from "@/components/ui/preloader";
 import { Briefcase, FileText, Home as HomeIcon, User } from "lucide-react";
 
 const navItems = [
@@ -12,6 +14,12 @@ const navItems = [
 ];
 
 export default function Page() {
+  const [showPreloader, setShowPreloader] = useState(true);
+
+  const handlePreloaderComplete = useCallback(() => {
+    setShowPreloader(false);
+  }, []);
+
   return (
     <div
       style={{
@@ -36,6 +44,8 @@ export default function Page() {
           zIndex: 1,
         }}
       />
+
+      {showPreloader && <Preloader onComplete={handlePreloaderComplete} />}
 
       {/* Navbar */}
       <div style={{ position: "relative", zIndex: 3, padding: "32px 24px" }}>
