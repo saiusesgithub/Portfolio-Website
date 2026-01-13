@@ -5,6 +5,7 @@ import { NavBar } from "@/components/ui/tubelight-navbar";
 import { Footer } from "@/components/ui/footer-section";
 import Preloader from "@/components/ui/preloader";
 import { LayeredText } from "@/components/ui/layered-text";
+import Lanyard from "@/components/ui/lanyard/Lanyard";
 import { Briefcase, FileText, Home as HomeIcon, User } from "lucide-react";
 
 const navItems = [
@@ -65,9 +66,14 @@ export default function Page() {
               lineHeightMd={26}
             />
           </div>
-          <div className="min-h-[200px]" />
+          <div className="min-h-[500px] h-[70vh] relative" />
         </div>
       </section>
+
+      {/* Lanyard - positioned absolutely from top */}
+      <div className="fixed top-0 right-0 w-1/2 h-screen z-[4]" style={{ pointerEvents: 'auto' }}>
+        <Lanyard cameraDistance={20} />
+      </div>
 
       {/* Main spacer to enable scroll */}
       <div style={{ height: "220vh", position: "relative", zIndex: 3 }} />
