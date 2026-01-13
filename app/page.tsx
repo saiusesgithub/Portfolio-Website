@@ -4,6 +4,7 @@ import SplashCursor from "@/components/SplashCursor";
 import { NavBar } from "@/components/ui/tubelight-navbar";
 import { Footer } from "@/components/ui/footer-section";
 import Preloader from "@/components/ui/preloader";
+import { LayeredText } from "@/components/ui/layered-text";
 import { Briefcase, FileText, Home as HomeIcon, User } from "lucide-react";
 
 const navItems = [
@@ -51,6 +52,22 @@ export default function Page() {
       <div style={{ position: "relative", zIndex: 3, padding: "32px 24px" }}>
         <NavBar items={navItems} />
       </div>
+
+      {/* Hero */}
+      <section id="hero" className="relative z-[3] px-6 pt-6 pb-20 md:px-12">
+        <div className="mx-auto grid min-h-[70vh] max-w-6xl items-center gap-10 md:grid-cols-2">
+          <div className="flex flex-col items-start text-left">
+            <LayeredText
+              className="text-white drop-shadow-[0_10px_35px_rgba(0,0,0,0.35)] [&_ul]:items-start"
+              fontSize="42px"
+              fontSizeMd="20px"
+              lineHeight={46}
+              lineHeightMd={26}
+            />
+          </div>
+          <div className="min-h-[200px]" />
+        </div>
+      </section>
 
       {/* Main spacer to enable scroll */}
       <div style={{ height: "220vh", position: "relative", zIndex: 3 }} />
